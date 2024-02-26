@@ -1,4 +1,4 @@
-package com.example.init;
+package fr.op.init;
 
 import org.spongepowered.asm.lib.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
