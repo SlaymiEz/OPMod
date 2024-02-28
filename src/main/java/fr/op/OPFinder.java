@@ -35,7 +35,7 @@ public class OPFinder {
         if (!found){
             if (activated && !first) {
                 for (int x = (int) player.posX - RADIUS; x <= (int) player.posX + RADIUS; x++) {
-                    for (int y = (int) player.posY - Y_RADIUS; y <= (int) player.posY + Y_RADIUS; y++) {
+                    for (int y = (int) player.posY - Y_RADIUS; y <= (int) player.posY; y++) {
                         for (int z = (int) player.posZ - RADIUS; z <= (int) player.posZ + RADIUS; z++) {
                             BlockPos pos = new BlockPos(x, y, z);
                             if (!first) {
