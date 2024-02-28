@@ -23,7 +23,7 @@ public class OPCommands extends CommandBase {
 
     @Override
     public void processCommand(ICommandSender sender, String[] args) throws CommandException {
-        final String commandError = "On dirait que tu t'es trompé dans la commande";
+        final String commandError = "On dirait que tu t'es trompé dans la commande, essaie \"/opConfig help\"";
         if (args.length == 2){
              if (args[0].equals("set")){
                  if (args[1].equals("on")){
@@ -47,6 +47,13 @@ public class OPCommands extends CommandBase {
             } else {
                  throw new CommandException(commandError);
              }
+        } else if(args.length == 1) {
+            if (args[0].equals("help")){
+                chatLog(prefix + EnumChatFormatting.WHITE + EnumChatFormatting.ITALIC + "\"/opConfig set on\" " + EnumChatFormatting.RESET + "pour activer le finder");
+                chatLog(prefix + EnumChatFormatting.WHITE + EnumChatFormatting.ITALIC + "\"/opConfig set off\" " + EnumChatFormatting.RESET + "pour désactiver le finder");
+        } else {
+                throw new CommandException(commandError);
+            }
         } else {
             throw new CommandException(commandError);
         }
