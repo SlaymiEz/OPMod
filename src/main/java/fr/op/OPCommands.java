@@ -28,10 +28,10 @@ public class OPCommands extends CommandBase {
              if (args[0].equals("set")){
                  if (args[1].equals("on")){
                     OPFinder.activated = true;
-                    chatLog(prefix + EnumChatFormatting.WHITE + "Tu as bien " + EnumChatFormatting.GREEN + "ACTIVÉ" + EnumChatFormatting.WHITE + " le OPFinder.");
+                    chatLog(prefix + c("white") + "Tu as bien " + c("green") + "ACTIVÉ" + c("white") + " le OPFinder.");
                  } else if (args[1].equals("off")){
                      OPFinder.activated = false;
-                     chatLog(prefix + EnumChatFormatting.WHITE + "Tu as bien " + EnumChatFormatting.RED + "DESACTIVÉ" + EnumChatFormatting.WHITE + " le OPFinder.");
+                     chatLog(prefix + c("white") + "Tu as bien " + c("red") + "DESACTIVÉ" + c("white") + " le OPFinder.");
                  } else {
                      throw new CommandException(commandError);
                  }
@@ -39,24 +39,28 @@ public class OPCommands extends CommandBase {
                  if (args[1].equals("found")){
                      OPFinder.found = false;
                      OPFinder.logged = false;
-                     chatLog(prefix + EnumChatFormatting.WHITE + "Tu as bien " + EnumChatFormatting.GREEN + "RESET" + EnumChatFormatting.WHITE + " la variable " + EnumChatFormatting.YELLOW + "found " + EnumChatFormatting.WHITE + "!");
+                     chatLog(prefix + c("white") + "Tu as bien " + c("green") + "RESET" + c("white") + " la variable " + c("yellow") + "found " + c("white") + "!");
                  } else if (args[1].equals("first")) {
                     OPFinder.first = false;
-                    chatLog(prefix + EnumChatFormatting.WHITE + "Tu as bien " + EnumChatFormatting.GREEN + "RESET" + EnumChatFormatting.WHITE + " la variable " + EnumChatFormatting.YELLOW + "first " + EnumChatFormatting.WHITE + "!");
+                    chatLog(prefix + c("white") + "Tu as bien " + c("green") + "RESET" + c("white") + " la variable " + c("yellow") + "first " + c("white") + "!");
                  }
             } else {
                  throw new CommandException(commandError);
              }
         } else if(args.length == 1) {
             if (args[0].equals("help")){
-                chatLog(prefix + EnumChatFormatting.WHITE + EnumChatFormatting.ITALIC + "\"/opConfig set on\" " + EnumChatFormatting.RESET + "pour activer le finder");
-                chatLog(prefix + EnumChatFormatting.WHITE + EnumChatFormatting.ITALIC + "\"/opConfig set off\" " + EnumChatFormatting.RESET + "pour désactiver le finder");
+                chatLog(prefix + c("white") + c("italic") + "\"/opConfig set on\" " + c("reset") + "pour activer le finder");
+                chatLog(prefix + c("white") + c("italic") + "\"/opConfig set off\" " + c("reset") + "pour désactiver le finder");
         } else {
                 throw new CommandException(commandError);
             }
         } else {
             throw new CommandException(commandError);
         }
+    }
+
+    private EnumChatFormatting c(String s){
+        return EnumChatFormatting.valueOf(s.toUpperCase());
     }
 
     @Override
